@@ -8,7 +8,7 @@ public abstract class SimpleSplit extends Split {
 
     double chanceToSucceed;
 
-    SplitLength splitLength;
+
 
     public SimpleSplit() {
 

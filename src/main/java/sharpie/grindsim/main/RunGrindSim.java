@@ -7,6 +7,7 @@ import sharpie.grindsim.Settings;
 import sharpie.grindsim.config.SimConfig;
 import sharpie.grindsim.routes.HypermodernBastion;
 import sharpie.grindsim.routes.ResetForMonument;
+import sharpie.grindsim.routes.ResetForMonumentBuriedTreasure;
 import sharpie.grindsim.routes.ResetForMonumentRuinedPortal;
 import sharpie.grindsim.sim.GrindSimulator;
 import sharpie.sim.config.UntilAttemptsConfig;
@@ -27,11 +28,24 @@ public class RunGrindSim {
 
         SimConfig config = new UntilAttemptsConfig(attempts);
 
-//        config.routeToRun = new ResetForMonument(15);
+        config.routeToRun = new ResetForMonument(15);
 
 //        config.routeToRun = new ResetForMonumentRuinedPortal(15, 7);
 
+//        config.routeToRun = new HypermodernBastion();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
         config.routeToRun = new HypermodernBastion();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+
+        config.routeToRun = new ResetForMonumentBuriedTreasure(15, 9);
 
         grindSimulator.runSim(config);
 

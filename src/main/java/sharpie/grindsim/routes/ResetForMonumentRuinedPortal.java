@@ -1,6 +1,6 @@
 package sharpie.grindsim.routes;
 
-import sharpie.grindsim.splits.nether.SimpleBarter;
+import sharpie.grindsim.splits.nether.bartering.SimpleBarter;
 import sharpie.grindsim.splits.overworld.CheckForMonument;
 import sharpie.grindsim.splits.overworld.CheckForRuinedPortal;
 

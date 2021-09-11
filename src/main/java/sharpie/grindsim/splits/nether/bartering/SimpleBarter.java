@@ -1,4 +1,4 @@
-package sharpie.grindsim.splits.nether;
+package sharpie.grindsim.splits.nether.bartering;
 
 import sharpie.grindsim.splits.SimpleSplit;
 import sharpie.grindsim.splits.SplitLength;
