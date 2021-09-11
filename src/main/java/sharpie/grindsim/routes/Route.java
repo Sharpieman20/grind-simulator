@@ -29,7 +29,7 @@ public abstract class Route {
 
         for (Split split : splits) {
 
-            if (splitClass.isInstance(newSplit)) {
+            if (splitClass.isInstance(split)) {
 
                 splits.add(index+1, newSplit);
 
@@ -46,7 +46,7 @@ public abstract class Route {
 
         for (Split split : splits) {
 
-            if (splitClass.isInstance(newSplit)) {
+            if (splitClass.isInstance(split)) {
 
                 splits.set(index, newSplit);
 
@@ -61,7 +61,7 @@ public abstract class Route {
 
         double time = 0.0;
 
-        boolean successful = false;
+        boolean successful = true;
 
         for (Split split : splits) {
 

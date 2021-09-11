@@ -5,6 +5,7 @@ package sharpie.grindsim.main;
 
 import sharpie.grindsim.Settings;
 import sharpie.grindsim.config.SimConfig;
+import sharpie.grindsim.routes.HypermodernBastion;
 import sharpie.grindsim.routes.ResetForMonument;
 import sharpie.grindsim.routes.ResetForMonumentRuinedPortal;
 import sharpie.grindsim.sim.GrindSimulator;
@@ -12,23 +13,30 @@ import sharpie.sim.config.UntilAttemptsConfig;
 
 public class RunGrindSim {
 
-
-
-
     public static void main(String[] args) {
 
         Settings.initialize();
 
         GrindSimulator grindSimulator = new GrindSimulator();
 
-        SimConfig config = new UntilAttemptsConfig(10_000);
+//        int attempts = 50_000_000;
 
-        config.routeToRun = new ResetForMonument(15);
+        int attempts = 5_000_000;
 
-        config.routeToRun = new ResetForMonumentRuinedPortal(15, 9);
+//        int attempts = 500_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+//        config.routeToRun = new ResetForMonument(15);
+
+//        config.routeToRun = new ResetForMonumentRuinedPortal(15, 7);
+
+        config.routeToRun = new HypermodernBastion();
 
         grindSimulator.runSim(config);
 
         System.out.println(config.getResults());
+
+//        System.out.println(config.getResults());
     }
 }

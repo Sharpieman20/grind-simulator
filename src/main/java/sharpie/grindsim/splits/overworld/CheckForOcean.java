@@ -4,11 +4,11 @@ import sharpie.grindsim.splits.SimpleSplit;
 import sharpie.grindsim.splits.SplitLength;
 import sharpie.grindsim.utils.TimeUnit;
 
-public class OceanEntry extends SimpleSplit {
+public class CheckForOcean extends SimpleSplit {
 
 
-    public OceanEntry() {
+    public CheckForOcean() {
 
-        super(0.5, new SplitLength(3.0, TimeUnit.MINUTES));
+        super(0.1, new SplitLength(1.0, TimeUnit.SECONDS));
     }
 }

@@ -59,6 +59,6 @@ public class SimulatorResults {
             return "0.0";
         }
 
-        return String.format("%.3f",playtime / successes);
+        return String.format("%.3f",getTotalPlaytimeHours() / successes);
     }
 }
