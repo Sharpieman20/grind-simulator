@@ -30,5 +30,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "sharpie.sim.GrindSimulator"
+    mainClassName = "sharpie.grindsim.main.RunGrindSim"
 }
