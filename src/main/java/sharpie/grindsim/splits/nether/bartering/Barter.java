@@ -1,4 +1,6 @@
 package sharpie.grindsim.splits.nether.bartering;
 
-public class Barter {
+import sharpie.grindsim.splits.Split;
+
+public abstract class Barter extends Split {
 }

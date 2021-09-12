@@ -15,6 +15,6 @@ public class ResetForMonument extends Route {
 
         addSplit(new OceanEntry());
 
-        addSplit(new SimpleBarter(0.07));
+        addSplit(new SimpleBarter(0.069));
     }
 }

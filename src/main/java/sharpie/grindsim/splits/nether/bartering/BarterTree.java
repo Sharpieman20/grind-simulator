@@ -10,7 +10,7 @@ import sharpie.grindsim.utils.TimeUnit;
 
 import static sharpie.grindsim.utils.Utils.nextDouble;
 
-public class BarterTree extends Barter {
+public abstract class BarterTree extends Barter {
 
 
     public BarterTree() {

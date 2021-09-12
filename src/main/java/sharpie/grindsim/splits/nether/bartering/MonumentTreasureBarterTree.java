@@ -1,5 +1,6 @@
 package sharpie.grindsim.splits.nether.bartering;
 
+import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.overworld.loot.BuriedTreasureLoot;
 import sharpie.grindsim.splits.overworld.loot.GoldSupplier;
 
@@ -15,14 +16,16 @@ public class MonumentTreasureBarterTree extends BarterTree {
 
     public MonumentTreasureBarterTree() {
     }
-//    public MonumentTreasureBarterTree() {
-//
-//        LootCondition = new LootCondition(BuriedTreasureLoot.getDiamonds(), 3);
-//
-//        addLootBarter(lootCondition, barter);
-//
-//        GoldLoot loot = new MonumentAndBuriedTreasure();
-//
-//        addLootBarter(loot, barter);
-//    }
+
+    public SplitResult sim() {
+
+        int diamonds = new BuriedTreasureLoot().rollDiamonds();
+
+        if (diamonds >= 3) {
+
+            return new BarterNoObby(new MonumentAndBuriedTreasure()).sim();
+        }
+
+        return new BarterMinimum(new MonumentAndBuriedTreasure()).sim();
+    }
 }
