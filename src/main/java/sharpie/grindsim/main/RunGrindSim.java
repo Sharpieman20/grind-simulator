@@ -3,12 +3,13 @@
  */
 package sharpie.grindsim.main;
 
-import sharpie.grindsim.Settings;
+import sharpie.grindsim.agents.*;
+import sharpie.grindsim.routes.PosposumentRoute;
+import sharpie.grindsim.utils.Settings;
 import sharpie.grindsim.config.SimConfig;
 import sharpie.grindsim.routes.HypermodernBastion;
-import sharpie.grindsim.routes.ResetForMonument;
+import sharpie.grindsim.routes.SimpleMonumentRoute;
 import sharpie.grindsim.routes.ResetForMonumentBuriedTreasure;
-import sharpie.grindsim.routes.ResetForMonumentRuinedPortal;
 import sharpie.grindsim.sim.GrindSimulator;
 import sharpie.sim.config.UntilAttemptsConfig;
 
@@ -17,6 +18,67 @@ public class RunGrindSim {
     public static void main(String[] args) {
 
         Settings.initialize();
+
+        runPosposumentSim();
+    }
+
+    private static void runPosposumentSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 5_000_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        MonumentResetAgent agent = new MonumentForcer();
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+        agent = new RDResetAgent(24);
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        agent = new CoordRDResetAgent(24);
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+//        agent = new CoordRDResetAgent(18);
+        agent = new RDResetAgent(18);
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+        agent = new CoordRDResetAgent(14);
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+        agent = new AggressiveCoordRDResetAgent(14);
+
+        config.routeToRun = new PosposumentRoute(agent);
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+    }
+
+    private static void oldMain() {
 
         GrindSimulator grindSimulator = new GrindSimulator();
 
@@ -28,7 +90,7 @@ public class RunGrindSim {
 
         SimConfig config = new UntilAttemptsConfig(attempts);
 
-        config.routeToRun = new ResetForMonument(15);
+        config.routeToRun = new SimpleMonumentRoute(15);
 
 //        config.routeToRun = new ResetForMonumentRuinedPortal(15, 7);
 

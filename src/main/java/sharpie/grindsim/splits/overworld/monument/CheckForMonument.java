@@ -1,4 +1,4 @@
-package sharpie.grindsim.splits.overworld;
+package sharpie.grindsim.splits.overworld.monument;
 
 import sharpie.grindsim.splits.SimpleSplit;
 import sharpie.grindsim.splits.SplitLength;

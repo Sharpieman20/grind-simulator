@@ -11,4 +11,9 @@ public class OceanEntry extends SimpleSplit {
 
         super(0.5, new SplitLength(3.0, TimeUnit.MINUTES));
     }
+
+    public OceanEntry(double time) {
+
+        super(1.0, new SplitLength(time, TimeUnit.MINUTES));
+    }
 }

@@ -1,14 +1,11 @@
 package sharpie.grindsim.routes;
 
-import sharpie.grindsim.splits.nether.bartering.BarterMinimum;
 import sharpie.grindsim.splits.nether.bartering.MonumentTreasureBarterTree;
 import sharpie.grindsim.splits.nether.bartering.SimpleBarter;
 import sharpie.grindsim.splits.overworld.CheckForBuriedTreasure;
-import sharpie.grindsim.splits.overworld.CheckForMonument;
-import sharpie.grindsim.splits.overworld.loot.BuriedTreasureLoot;
-import sharpie.grindsim.splits.overworld.loot.GoldSupplier;
+import sharpie.grindsim.splits.overworld.monument.CheckForMonument;
 
-public class ResetForMonumentBuriedTreasure extends ResetForMonument {
+public class ResetForMonumentBuriedTreasure extends SimpleMonumentRoute {
 
 
 

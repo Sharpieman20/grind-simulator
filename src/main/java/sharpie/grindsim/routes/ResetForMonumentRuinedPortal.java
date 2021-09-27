@@ -1,10 +1,10 @@
 package sharpie.grindsim.routes;
 
 import sharpie.grindsim.splits.nether.bartering.SimpleBarter;
-import sharpie.grindsim.splits.overworld.CheckForMonument;
+import sharpie.grindsim.splits.overworld.monument.CheckForMonument;
 import sharpie.grindsim.splits.overworld.CheckForRuinedPortal;
 
-public class ResetForMonumentRuinedPortal extends ResetForMonument {
+public class ResetForMonumentRuinedPortal extends SimpleMonumentRoute {
 
     public ResetForMonumentRuinedPortal(int monumentRd, int portalRd) {
 
