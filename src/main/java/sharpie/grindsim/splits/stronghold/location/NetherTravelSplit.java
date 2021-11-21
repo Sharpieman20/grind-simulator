@@ -1,7 +1,7 @@
 package sharpie.grindsim.splits.stronghold.location;
 
 import sharpie.grindsim.agents.nethertravel.BlindAgent;
-import sharpie.grindsim.agents.NetherTravelAgent;
+import sharpie.grindsim.agents.nethertravel.NetherTravelAgent;
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
 import sharpie.grindsim.splits.SplitLength;

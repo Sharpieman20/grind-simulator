@@ -1,6 +1,5 @@
 package sharpie.grindsim.agents.nethertravel;
 
-import sharpie.grindsim.agents.NetherTravelAgent;
 import sharpie.grindsim.splits.stronghold.location.Divine;
 import sharpie.grindsim.utils.Point;
 
@@ -31,7 +30,7 @@ public class DivineAgent extends NetherTravelAgent {
 
         for (int i = 0; i < 3; i++) {
 
-            double angle = baseAngle + (2/3.0)*i;
+            double angle = baseAngle*2.0 + (2/3.0)*i;
 
             double radianAngle = Math.PI * angle;
 
@@ -60,6 +59,8 @@ public class DivineAgent extends NetherTravelAgent {
                 closestPoint = points.get(i);
             }
         }
+
+        System.out.println(closestPoint);
 
         return closestPoint;
     }

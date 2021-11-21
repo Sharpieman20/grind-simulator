@@ -4,6 +4,8 @@
 package sharpie.grindsim.main;
 
 import sharpie.grindsim.agents.*;
+import sharpie.grindsim.agents.nethertravel.divine.PortalDivineAgent;
+import sharpie.grindsim.agents.nethertravel.divine.SmartPortalDivineAgent;
 import sharpie.grindsim.routes.*;
 import sharpie.grindsim.routes.fullroutes.*;
 import sharpie.grindsim.routes.netherexitroutes.*;
@@ -42,6 +44,8 @@ public class RunGrindSim {
         grindSimulator.runSim(config);
 
         System.out.println(config.getResults());
+
+        System.out.println(((double)SmartPortalDivineAgent.count)/attempts);
     }
 
     private static void runPosposumentSim() {

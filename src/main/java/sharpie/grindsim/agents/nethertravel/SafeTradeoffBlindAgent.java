@@ -4,6 +4,6 @@ public class SafeTradeoffBlindAgent extends TradeoffBlindAgent {
 
     public SafeTradeoffBlindAgent() {
 
-        super(200, 240);
+        super(180, 240);
     }
 }

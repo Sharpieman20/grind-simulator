@@ -1,4 +1,4 @@
-package sharpie.grindsim.agents;
+package sharpie.grindsim.agents.nethertravel;
 
 import sharpie.grindsim.utils.Point;
 
