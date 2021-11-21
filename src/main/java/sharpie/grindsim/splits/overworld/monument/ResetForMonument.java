@@ -37,7 +37,9 @@ public class ResetForMonument extends Split {
                 }
                 else {
 
-                    time += 1.0;
+                    time -= WORLDGEN_TIME;
+
+                    time += 2.0;
                 }
             }
             else {
