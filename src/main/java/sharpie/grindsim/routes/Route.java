@@ -3,6 +3,7 @@ package sharpie.grindsim.routes;
 import sharpie.grindsim.results.SimulatorResults;
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
+import sharpie.grindsim.utils.Run;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +63,8 @@ public abstract class Route {
         double time = 0.0;
 
         boolean successful = true;
+
+        Run.startNewRun();
 
         for (Split split : splits) {
 

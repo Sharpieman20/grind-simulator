@@ -11,6 +11,7 @@ import sharpie.grindsim.splits.nether.TravelToBastion;
 import sharpie.grindsim.splits.overworld.CheckForOcean;
 import sharpie.grindsim.splits.overworld.OceanEntry;
 import sharpie.grindsim.splits.stronghold.location.BlindTravelSplit;
+import sharpie.grindsim.splits.stronghold.location.DivineTravelSplit;
 import sharpie.grindsim.splits.worldgen.WorldGen;
 import sharpie.grindsim.utils.TimeUnit;
 
@@ -32,6 +33,6 @@ public class HypermodernBastionFull extends MaximumTimeRoute {
 
         addSplit(new ExitNetherFromBastion());
 
-        addSplit(new BlindTravelSplit());
+        addSplit(new DivineTravelSplit());
     }
 }
