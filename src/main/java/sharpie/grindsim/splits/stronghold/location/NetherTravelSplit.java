@@ -1,6 +1,6 @@
 package sharpie.grindsim.splits.stronghold.location;
 
-import sharpie.grindsim.agents.BlindAgent;
+import sharpie.grindsim.agents.nethertravel.BlindAgent;
 import sharpie.grindsim.agents.NetherTravelAgent;
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
@@ -9,7 +9,7 @@ import sharpie.grindsim.utils.Point;
 import sharpie.grindsim.utils.TimeUnit;
 import sharpie.grindsim.utils.Utils;
 
-public abstract class NetherTravelSplit extends Split {
+public class NetherTravelSplit extends Split {
 
     private static final double DIG_TIME = 20.0;
 

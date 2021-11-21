@@ -41,13 +41,13 @@ public class Stronghold extends Point {
     public static Stronghold getClosestStrongholdInSet(Point base, List<Stronghold> strongholds) {
 
         Stronghold closest = null;
-        double minDist = 999999.0;
+        double minDist = -1;
 
         for (Stronghold stronghold : strongholds) {
 
             double dist = base.distanceTo(stronghold);
 
-            if (dist < minDist) {
+            if (minDist < 0 || dist < minDist) {
 
                 minDist = dist;
                 closest = stronghold;

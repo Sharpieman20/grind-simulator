@@ -23,6 +23,12 @@ public class RunGrindSim {
         runBlindTravelSim();
     }
 
+    /**
+     * TODO @sharpieman20
+     *
+     * Make this generate statistics for all the blind travel agents
+     * percentile curves
+     */
     private static void runBlindTravelSim() {
 
         GrindSimulator grindSimulator = new GrindSimulator();
@@ -31,7 +37,7 @@ public class RunGrindSim {
 
         SimConfig config = new UntilAttemptsConfig(attempts);
 
-        config.routeToRun = new HypermodernBastionFull();
+        config.routeToRun = new TestNetherTravelRoute();
 
         grindSimulator.runSim(config);
 
