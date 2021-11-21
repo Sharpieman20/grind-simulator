@@ -4,12 +4,11 @@
 package sharpie.grindsim.main;
 
 import sharpie.grindsim.agents.*;
-import sharpie.grindsim.routes.PosposumentRoute;
+import sharpie.grindsim.routes.*;
+import sharpie.grindsim.routes.fullroutes.*;
+import sharpie.grindsim.routes.netherexitroutes.*;
 import sharpie.grindsim.utils.Settings;
 import sharpie.grindsim.config.SimConfig;
-import sharpie.grindsim.routes.HypermodernBastion;
-import sharpie.grindsim.routes.SimpleMonumentRoute;
-import sharpie.grindsim.routes.ResetForMonumentBuriedTreasure;
 import sharpie.grindsim.sim.GrindSimulator;
 import sharpie.sim.config.UntilAttemptsConfig;
 
@@ -19,7 +18,24 @@ public class RunGrindSim {
 
         Settings.initialize();
 
-        runPosposumentSim();
+//        runPosposumentSim();
+
+        runBlindTravelSim();
+    }
+
+    private static void runBlindTravelSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 1_000_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        config.routeToRun = new HypermodernBastionFull();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
     }
 
     private static void runPosposumentSim() {

@@ -1,6 +1,7 @@
-package sharpie.grindsim.routes;
+package sharpie.grindsim.routes.netherexitroutes;
 
 import sharpie.grindsim.agents.MonumentResetAgent;
+import sharpie.grindsim.routes.Route;
 import sharpie.grindsim.splits.nether.bartering.SimpleBarter;
 import sharpie.grindsim.splits.overworld.OceanEntry;
 import sharpie.grindsim.splits.overworld.monument.CheckForRuinedPortalAfterMonument;

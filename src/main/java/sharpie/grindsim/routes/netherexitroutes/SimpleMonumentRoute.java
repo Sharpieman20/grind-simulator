@@ -1,5 +1,6 @@
-package sharpie.grindsim.routes;
+package sharpie.grindsim.routes.netherexitroutes;
 
+import sharpie.grindsim.routes.Route;
 import sharpie.grindsim.splits.nether.bartering.SimpleBarter;
 import sharpie.grindsim.splits.overworld.monument.CheckForMonument;
 import sharpie.grindsim.splits.overworld.OceanEntry;

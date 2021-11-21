@@ -29,6 +29,11 @@ public class SimulatorResults {
         return attempts;
     }
 
+    public int getSuccesses() {
+
+        return successes;
+    }
+
     public void addSuccess(boolean shouldAddSuccess) {
 
         if (shouldAddSuccess) {
@@ -37,11 +42,20 @@ public class SimulatorResults {
         }
     }
 
+    public void markUnsuccessful() {
+
+        successes = 0;
+    }
+
     public void setTime(double playtime) {
 
         this.playtime = playtime;
     }
 
+    public double getTime() {
+
+        return playtime;
+    }
 
     public double getTotalPlaytimeHours() {
 
@@ -76,7 +90,7 @@ public class SimulatorResults {
 
     public String showSuccessRate() {
 
-        return String.format("%.3f",100.0*successes/attempts);
+        return String.format("%.3f",100.0*successes/attempts)+"%";
     }
 
     public String showTotalTimePerSuccess() {
@@ -95,7 +109,7 @@ public class SimulatorResults {
 
         result += "Time on successes: " + showTimeForSuccesses() + "\n";
         result += "Success rate: " + showSuccessRate() + "\n";
-        result += "Time per success: " + showTotalTimePerSuccess() + "\n";
+        result += "Total playtime per success: " + showTotalTimePerSuccess() + "\n";
 
         return result;
     }

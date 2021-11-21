@@ -1,5 +1,6 @@
-package sharpie.grindsim.routes;
+package sharpie.grindsim.routes.netherexitroutes;
 
+import sharpie.grindsim.routes.Route;
 import sharpie.grindsim.splits.nether.ExitNetherFromBastion;
 import sharpie.grindsim.splits.overworld.CheckForOcean;
 import sharpie.grindsim.splits.overworld.OceanEntry;

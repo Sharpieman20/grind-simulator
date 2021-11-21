@@ -26,6 +26,6 @@ public abstract class Settings {
             random = new SecureRandom();
         }
 
-        MonumentWorldSampler.init();
+//        MonumentWorldSampler.init();
     }
 }
