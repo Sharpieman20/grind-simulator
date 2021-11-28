@@ -60,7 +60,7 @@ public class DivineAgent extends NetherTravelAgent {
             }
         }
 
-        System.out.println(closestPoint);
+//        System.out.println(closestPoint);
 
         return closestPoint;
     }

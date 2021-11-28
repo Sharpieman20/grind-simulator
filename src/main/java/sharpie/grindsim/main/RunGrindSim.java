@@ -45,7 +45,7 @@ public class RunGrindSim {
 
         System.out.println(config.getResults());
 
-        System.out.println(((double)SmartPortalDivineAgent.count)/attempts);
+        System.out.println(config.getResults().showSuccessTimePercentiles());
     }
 
     private static void runPosposumentSim() {

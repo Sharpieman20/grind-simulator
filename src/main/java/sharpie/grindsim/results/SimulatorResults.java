@@ -1,6 +1,7 @@
 package sharpie.grindsim.results;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SimulatorResults {
@@ -101,6 +102,36 @@ public class SimulatorResults {
         }
 
         return String.format("%.3f",60.0*getTotalPlaytimeHours() / successes);
+    }
+
+    public String showSuccessTimePercentiles() {
+
+        List<Double> copiedTimes = new ArrayList<>();
+
+        for (Double time : successPlaytimes) {
+
+            copiedTimes.add(time);
+        }
+
+        Collections.sort(copiedTimes);
+
+        double[] percentiles = new double[]{0.01, 0.1, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 50.0, 75.0};
+
+        double[] results = new double[percentiles.length];
+
+        for (int i = 0; i < percentiles.length; i++) {
+
+            results[i] = copiedTimes.get((int) (copiedTimes.size()*percentiles[i]/100.0));
+        }
+
+        String result = "";
+
+        for (int i = 0; i < percentiles.length; i++) {
+
+            result += percentiles[i] + " " + String.format("%.1f", results[i]) + "\n";
+        }
+
+        return result;
     }
 
     public String toString() {
