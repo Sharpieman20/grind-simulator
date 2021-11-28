@@ -1,7 +1,7 @@
 package sharpie.grindsim.routes.testroutes;
 
 import sharpie.grindsim.routes.Route;
-import sharpie.grindsim.splits.stronghold.location.End;
+import sharpie.grindsim.splits.end.End;
 
 public class TestEndFightRoute extends Route {
 

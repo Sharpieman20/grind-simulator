@@ -1,7 +1,5 @@
 package sharpie.grindsim.agents.nethertravel;
 
-import sharpie.grindsim.utils.Point;
-
 public class RingBlindAgent extends TradeoffBlindAgent {
 
     public RingBlindAgent() {

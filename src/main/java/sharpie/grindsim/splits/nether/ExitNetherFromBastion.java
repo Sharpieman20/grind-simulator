@@ -8,6 +8,6 @@ public class ExitNetherFromBastion extends SimpleSplit {
 
     public ExitNetherFromBastion() {
 
-        super(0.14, new SplitLength(6.0, TimeUnit.MINUTES));
+        super(0.14, new SplitLength(5.0, TimeUnit.MINUTES));
     }
 }

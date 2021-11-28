@@ -4,6 +4,7 @@
 package sharpie.grindsim.main;
 
 import sharpie.grindsim.agents.*;
+import sharpie.grindsim.routes.fullroutes.HypermodernBastionFull;
 import sharpie.grindsim.routes.netherexitroutes.*;
 import sharpie.grindsim.routes.testroutes.TestEndFightRoute;
 import sharpie.grindsim.routes.testroutes.TestNetherTravelRoute;
@@ -20,7 +21,9 @@ public class RunGrindSim {
 
 //        runPosposumentSim();
 
-        runEndFightSim();
+//        runEndFightSim();
+
+        runFullRouteSim();
     }
 
     /**
@@ -64,6 +67,24 @@ public class RunGrindSim {
         System.out.println(config.getResults());
 
         System.out.println(config.getResults().showSuccessTimePercentiles());
+    }
+
+    /**
+     * Full run sim
+     */
+    private static void runFullRouteSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 1_000_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        config.routeToRun = new HypermodernBastionFull();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
     }
 
     private static void runPosposumentSim() {

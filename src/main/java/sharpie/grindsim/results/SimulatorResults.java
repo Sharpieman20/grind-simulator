@@ -141,6 +141,7 @@ public class SimulatorResults {
         result += "Time on successes: " + showTimeForSuccesses() + "\n";
         result += "Success rate: " + showSuccessRate() + "\n";
         result += "Total playtime per success: " + showTotalTimePerSuccess() + "\n";
+        result += "Attempts per success " + attempts / successes + "\n";
 
         return result;
     }

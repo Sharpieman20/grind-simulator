@@ -1,19 +1,18 @@
-package sharpie.grindsim.splits.stronghold.location;
+package sharpie.grindsim.splits.end;
 
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
 import sharpie.grindsim.splits.end.EndFightAgent;
+import sharpie.grindsim.splits.end.NSGroundAgent;
 import sharpie.grindsim.splits.end.TwoCycleAgent;
 
 public class End extends Split {
-
-    private static final double DIG_TIME = 20.0;
 
     EndFightAgent agent;
 
     public End() {
 
-        this(new TwoCycleAgent());
+        this(new NSGroundAgent());
     }
 
     public End(EndFightAgent agent) {
