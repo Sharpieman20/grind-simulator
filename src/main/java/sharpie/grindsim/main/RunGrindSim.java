@@ -4,11 +4,9 @@
 package sharpie.grindsim.main;
 
 import sharpie.grindsim.agents.*;
-import sharpie.grindsim.agents.nethertravel.divine.PortalDivineAgent;
-import sharpie.grindsim.agents.nethertravel.divine.SmartPortalDivineAgent;
-import sharpie.grindsim.routes.*;
-import sharpie.grindsim.routes.fullroutes.*;
 import sharpie.grindsim.routes.netherexitroutes.*;
+import sharpie.grindsim.routes.testroutes.TestEndFightRoute;
+import sharpie.grindsim.routes.testroutes.TestNetherTravelRoute;
 import sharpie.grindsim.utils.Settings;
 import sharpie.grindsim.config.SimConfig;
 import sharpie.grindsim.sim.GrindSimulator;
@@ -22,7 +20,7 @@ public class RunGrindSim {
 
 //        runPosposumentSim();
 
-        runBlindTravelSim();
+        runEndFightSim();
     }
 
     /**
@@ -46,6 +44,26 @@ public class RunGrindSim {
         System.out.println(config.getResults());
 
         System.out.println(config.getResults().showSuccessTimePercentiles());
+    }
+
+
+
+    /**
+     * Simple end fight tester
+     */
+    private static void runEndFightSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 1_000_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        config.routeToRun = new TestEndFightRoute();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
     }
 
     private static void runPosposumentSim() {
