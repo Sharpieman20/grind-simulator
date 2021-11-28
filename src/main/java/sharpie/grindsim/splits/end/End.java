@@ -1,15 +1,9 @@
 package sharpie.grindsim.splits.stronghold.location;
 
-import sharpie.grindsim.agents.nethertravel.BlindAgent;
-import sharpie.grindsim.agents.nethertravel.NetherTravelAgent;
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
-import sharpie.grindsim.splits.SplitLength;
 import sharpie.grindsim.splits.end.EndFightAgent;
-import sharpie.grindsim.splits.end.NSGroundAgent;
-import sharpie.grindsim.utils.Point;
-import sharpie.grindsim.utils.TimeUnit;
-import sharpie.grindsim.utils.Utils;
+import sharpie.grindsim.splits.end.TwoCycleAgent;
 
 public class End extends Split {
 
@@ -19,7 +13,7 @@ public class End extends Split {
 
     public End() {
 
-        this(new NSGroundAgent());
+        this(new TwoCycleAgent());
     }
 
     public End(EndFightAgent agent) {

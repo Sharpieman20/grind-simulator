@@ -115,7 +115,7 @@ public class SimulatorResults {
 
         Collections.sort(copiedTimes);
 
-        double[] percentiles = new double[]{0.01, 0.1, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 50.0, 75.0};
+        double[] percentiles = new double[]{0.01, 0.1, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 50.0, 75.0, 99.0};
 
         double[] results = new double[percentiles.length];
 

@@ -46,8 +46,6 @@ public class RunGrindSim {
         System.out.println(config.getResults().showSuccessTimePercentiles());
     }
 
-
-
     /**
      * Simple end fight tester
      */
@@ -55,7 +53,7 @@ public class RunGrindSim {
 
         GrindSimulator grindSimulator = new GrindSimulator();
 
-        int attempts = 1_000_000;
+        int attempts = 10_000;
 
         SimConfig config = new UntilAttemptsConfig(attempts);
 
@@ -64,6 +62,8 @@ public class RunGrindSim {
         grindSimulator.runSim(config);
 
         System.out.println(config.getResults());
+
+        System.out.println(config.getResults().showSuccessTimePercentiles());
     }
 
     private static void runPosposumentSim() {

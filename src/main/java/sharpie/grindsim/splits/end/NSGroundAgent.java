@@ -1,19 +1,12 @@
 package sharpie.grindsim.splits.end;
 
-import sharpie.grindsim.results.SplitResult;
-import sharpie.grindsim.splits.SplitLength;
-import sharpie.grindsim.utils.TimeUnit;
+/**
+ * Credit for distributions: T_Wag
+ */
+public class NSGroundAgent extends GammaEndFightAgent {
 
-public class NSGroundAgent extends EndFightAgent {
+    public NSGroundAgent() {
 
-    public SplitResult doEndFight() {
-
-        SplitResult result = new SplitResult();
-
-        result.setDidSucceed(true);
-
-        result.setTime(new SplitLength(5.0, TimeUnit.MINUTES).getTime());
-
-        return result;
+        super(1.101386, 48.39821, 93.129);
     }
 }
