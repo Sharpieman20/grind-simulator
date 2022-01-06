@@ -17,13 +17,17 @@ plugins {
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
     implementation("org.apache.commons:commons-math3:3.0")
+    implementation("com.github.Sharpieman20:Ninjabrain-Bot:main-SNAPSHOT")
 
     // Use JUnit test framework
     testImplementation("junit:junit:4.13")
