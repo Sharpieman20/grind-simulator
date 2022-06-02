@@ -4,6 +4,7 @@ import sharpie.grindsim.agents.nethertravel.AggressiveTradeoffBlindAgent;
 import sharpie.grindsim.routes.MaximumTimeRoute;
 import sharpie.grindsim.splits.SplitLength;
 import sharpie.grindsim.splits.end.End;
+import sharpie.grindsim.splits.misc.RandomDeathSplit;
 import sharpie.grindsim.splits.nether.CheckForBastion;
 import sharpie.grindsim.splits.nether.ExitNetherFromBastion;
 import sharpie.grindsim.splits.nether.TravelToBastion;

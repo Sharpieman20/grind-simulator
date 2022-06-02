@@ -5,6 +5,7 @@ import sharpie.grindsim.agents.nethertravel.NetherTravelAgent;
 import sharpie.grindsim.results.SplitResult;
 import sharpie.grindsim.splits.Split;
 import sharpie.grindsim.splits.SplitLength;
+import sharpie.grindsim.splits.stronghold.location.Stronghold;
 import sharpie.grindsim.utils.Point;
 import sharpie.grindsim.utils.TimeUnit;
 import sharpie.grindsim.utils.Utils;
@@ -18,18 +19,18 @@ public class TriangulationSplit extends Split {
     double overworldWeight;
     boolean shouldDig;
 
-    public NetherTravelSplit() {
+    public TriangulationSplit() {
 
         this(new BlindAgent());
     }
 
-    public NetherTravelSplit(NetherTravelAgent agent) {
+    public TriangulationSplit(NetherTravelAgent agent) {
 
         this(agent, 0.4, 0.2, true);
     }
 
 
-    public NetherTravelSplit(NetherTravelAgent agent, double netherWeight, double overworldWeight, boolean shouldDig) {
+    public TriangulationSplit(NetherTravelAgent agent, double netherWeight, double overworldWeight, boolean shouldDig) {
 
         this.agent = agent;
         this.netherWeight = netherWeight;
