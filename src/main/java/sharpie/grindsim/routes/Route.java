@@ -10,7 +10,7 @@ import java.util.List;
 
 public abstract class Route {
 
-    List<Split> splits;
+    protected List<Split> splits;
 
     boolean doesBackgroundResets;
 

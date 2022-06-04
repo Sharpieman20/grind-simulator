@@ -33,4 +33,9 @@ public class SplitLength {
 
         return time;
     }
+
+    public String toString() {
+
+        return String.format("%.1f Minutes",getTime());
+    }
 }

@@ -8,9 +8,13 @@ import java.util.List;
 
 public class JsonTimeListSplit extends TimeListSplit {
 
+    public String name;
+
     public JsonTimeListSplit(String fileName) {
 
         this(JsonSplitUtils.loadJsonObjectFromFile(fileName));
+
+        this.name = fileName;
     }
 
     public JsonTimeListSplit(JsonObject jsonObject) {

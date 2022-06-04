@@ -5,7 +5,7 @@ import sharpie.grindsim.splits.SplitLength;
 
 public class MaximumTimeRoute extends Route {
 
-    SplitLength maxTime;
+    protected SplitLength maxTime;
 
     public MaximumTimeRoute(SplitLength maxTime) {
 
