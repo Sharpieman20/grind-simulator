@@ -7,6 +7,7 @@ import sharpie.grindsim.agents.*;
 import sharpie.grindsim.config.UntilPlaytimeConfig;
 import sharpie.grindsim.routes.fullroutes.HypermodernBastionFull;
 import sharpie.grindsim.routes.netherexitroutes.*;
+import sharpie.grindsim.routes.testroutes.TestCustomJsonRoute;
 import sharpie.grindsim.routes.testroutes.TestEndFightRoute;
 import sharpie.grindsim.routes.testroutes.TestNetherTravelRoute;
 import sharpie.grindsim.routes.testroutes.TestPostEntryRoute;
@@ -14,6 +15,8 @@ import sharpie.grindsim.utils.Settings;
 import sharpie.grindsim.config.SimConfig;
 import sharpie.grindsim.sim.GrindSimulator;
 import sharpie.sim.config.UntilAttemptsConfig;
+
+import static sharpie.grindsim.splits.SplitUtils.getSplitLengthFromTimeString;
 
 public class RunGrindSim {
 
@@ -27,7 +30,30 @@ public class RunGrindSim {
 
 //        runFullRouteSimUntilTime();
 
-        runTestPostEntrySim();
+//        runTestPostEntrySim();
+
+        runCustomJsonSim();
+//        getSplitLengthFromTimeString("00:00:01.000");
+    }
+
+    /**
+     * Demo for an example sim based on json split information
+     */
+    private static void runCustomJsonSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 100_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        config.routeToRun = new TestCustomJsonRoute();
+
+        grindSimulator.runSim(config);
+
+        System.out.println(config.getResults());
+
+        System.out.println(config.getResults().showSuccessTimePercentiles());
     }
 
     /**

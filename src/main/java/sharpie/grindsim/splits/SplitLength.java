@@ -19,7 +19,11 @@ public class SplitLength {
 
         double time = length;
 
-        if (unit == TimeUnit.SECONDS) {
+        if (unit == TimeUnit.MILLISECONDS) {
+
+            time /= 1000.0;
+            time /= 60.0;
+        } else if (unit == TimeUnit.SECONDS) {
 
             time /= 60.0;
         } else if (unit == TimeUnit.HOURS) {

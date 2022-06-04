@@ -28,6 +28,8 @@ dependencies {
     implementation("com.google.guava:guava:29.0-jre")
     implementation("org.apache.commons:commons-math3:3.0")
     implementation("com.github.Sharpieman20:Ninjabrain-Bot:main-SNAPSHOT")
+    implementation("javax.json:javax.json-api:1.1.4")
+    implementation("org.glassfish:javax.json:1.1.4")
 
     // Use JUnit test framework
     testImplementation("junit:junit:4.13")

@@ -4,5 +4,6 @@ public enum TimeUnit {
 
     HOURS,
     MINUTES,
-    SECONDS
+    SECONDS,
+    MILLISECONDS
 };
