@@ -1,5 +1,7 @@
 package sharpie.grindsim.results;
 
+import sharpie.grindsim.splits.SplitLength;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -134,14 +136,72 @@ public class SimulatorResults {
         return result;
     }
 
+    public String showSuccessRatesByThreshold(List<SplitLength> thresholdTimes) {
+
+        List<Double> copiedTimes = new ArrayList<>();
+
+        for (Double time : successPlaytimes) {
+
+            copiedTimes.add(time);
+        }
+
+        Collections.sort(copiedTimes);
+
+        Collections.sort(thresholdTimes);
+
+        List<Integer> thresholdCounts = new ArrayList<>();
+
+        thresholdCounts.add(0);
+
+        int thresholdIndex = 0;
+        int timeIndex = 0;
+
+        while (timeIndex < copiedTimes.size()) {
+
+            if (copiedTimes.get(timeIndex) > thresholdTimes.get(thresholdIndex).getTime()) {
+
+                thresholdCounts.add(thresholdCounts.get(thresholdIndex++));
+                continue;
+            }
+
+            thresholdCounts.set(thresholdIndex, thresholdCounts.get(thresholdIndex)+1);
+            timeIndex++;
+        }
+
+        while (thresholdCounts.size() < thresholdTimes.size()) {
+
+            thresholdCounts.add(thresholdCounts.get(thresholdCounts.size()-1));
+        }
+
+        String result = "Total Percentage Better than Max Time";
+
+        for (int i = 0; i < thresholdTimes.size(); i++) {
+
+            result += "\n\t";
+
+            double thresholdPercentage = ((double)thresholdCounts.get(i)) / getAttempts();
+
+            String partialString = thresholdTimes.get(i).toString();
+
+            while (partialString.length() < 13) {
+
+                partialString += " ";
+            }
+
+            result += partialString + " | " + String.format("%02.3f", thresholdPercentage*100.0) + "%";
+        }
+
+        return result;
+    }
+
     public String toString() {
 
         String result = "";
 
-        result += "Time on successes: " + showTimeForSuccesses() + "\n";
+        result += "Average time on successes: " + showTimeForSuccesses() + "\n";
         result += "Success rate: " + showSuccessRate() + "\n";
         result += "Total playtime per success: " + showTotalTimePerSuccess() + "\n";
-        result += "Attempts per success " + attempts / successes + "\n";
+        result += "Attempts per success: " + attempts / successes + "\n";
 
         return result;
     }

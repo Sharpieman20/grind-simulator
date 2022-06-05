@@ -8,12 +8,18 @@ import sharpie.grindsim.config.UntilPlaytimeConfig;
 import sharpie.grindsim.routes.fullroutes.HypermodernBastionFull;
 import sharpie.grindsim.routes.netherexitroutes.*;
 import sharpie.grindsim.routes.testroutes.*;
+import sharpie.grindsim.splits.SplitLength;
 import sharpie.grindsim.utils.Settings;
 import sharpie.grindsim.config.SimConfig;
 import sharpie.grindsim.sim.GrindSimulator;
+import sharpie.grindsim.utils.TimeUnit;
 import sharpie.sim.config.UntilAttemptsConfig;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static sharpie.grindsim.splits.SplitUtils.getSplitLengthFromTimeString;
+import static sharpie.grindsim.utils.TimeUnit.MINUTES;
 
 public class RunGrindSim {
 
@@ -30,8 +36,40 @@ public class RunGrindSim {
 //        runTestPostEntrySim();
 
 //        runCustomJsonSim();
-        runCustomJsonMaxTimeSim();
+//        runCustomJsonMaxTimeSim();
+        runCustomJsonMultipleMaxTimeSim();
 //        getSplitLengthFromTimeString("00:00:01.000");
+    }
+
+
+    /**
+     * Demo for an example sim with max time
+     */
+    private static void runCustomJsonMultipleMaxTimeSim() {
+
+        GrindSimulator grindSimulator = new GrindSimulator();
+
+        int attempts = 100_000;
+
+        SimConfig config = new UntilAttemptsConfig(attempts);
+
+        config.routeToRun = new TestCustomJsonMaximumTimeRoute();
+
+        grindSimulator.runSim(config);
+
+        System.out.println("\nRoute:\n"+config.routeToRun+"\n");
+
+        System.out.println(config.getResults());
+
+        List<SplitLength> thresholdTimes = new ArrayList<>();
+
+        thresholdTimes.add(new SplitLength(8.0, MINUTES));
+        thresholdTimes.add(new SplitLength(9.3, MINUTES));
+        thresholdTimes.add(new SplitLength(10.5, MINUTES));
+        thresholdTimes.add(new SplitLength(11.0, MINUTES));
+        thresholdTimes.add(new SplitLength(12.0, MINUTES));
+
+        System.out.println(config.getResults().showSuccessRatesByThreshold(thresholdTimes));
     }
 
 

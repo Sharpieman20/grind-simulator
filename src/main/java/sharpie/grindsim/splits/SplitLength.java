@@ -2,7 +2,7 @@ package sharpie.grindsim.splits;
 
 import sharpie.grindsim.utils.TimeUnit;
 
-public class SplitLength {
+public class SplitLength implements Comparable<SplitLength> {
 
     double length;
 
@@ -32,6 +32,11 @@ public class SplitLength {
         }
 
         return time;
+    }
+
+    public int compareTo(SplitLength other) {
+
+        return Double.compare(getTime(), other.getTime());
     }
 
     public String toString() {

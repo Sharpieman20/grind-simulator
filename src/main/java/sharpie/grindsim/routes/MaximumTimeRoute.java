@@ -14,6 +14,11 @@ public class MaximumTimeRoute extends Route {
         this.maxTime = maxTime;
     }
 
+    public SplitLength getMaxTime() {
+
+        return maxTime;
+    }
+
     @Override
     public SimulatorResults sim() {
 
